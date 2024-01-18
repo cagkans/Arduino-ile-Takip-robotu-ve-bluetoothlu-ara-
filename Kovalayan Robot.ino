@@ -25,18 +25,18 @@ int   pos=0;     //Servo motorun konumunun değerini tutan kod satırı.
 void setup() 
 {   
    Serial.begin(9600); 
-   myservo.attach(10); // servo 10. dijital pine bağlı.
+   servo.attach(10); // servo 10. dijital pine bağlı.
 {
 for(pos = 90; pos <= 180; pos += 1){    // 90 dereceden 180 dereceye döner.
-  myservo.write(pos);                  
+  servo.write(pos);                  
   delay(15);                            
   } 
 for(pos = 180; pos >= 0; pos-= 1) {     // 180 dereceden 0 dereceye döner.
-  myservo.write(pos);                   
+  servo.write(pos);                   
   delay(15);                            
   }
 for(pos = 0; pos<=90; pos += 1) {       // 0 dereceden 90 dereceye döner.
-  myservo.write(pos);                   
+  servo.write(pos);                   
   delay(15);                            
   }
 }
@@ -46,7 +46,7 @@ for(pos = 0; pos<=90; pos += 1) {       // 0 dereceden 90 dereceye döner.
 
 void loop() {     
 
-distance = sonar.ping_cm();                     //Gecikme gönderip mesafeyi cm olarak alıcaz.
+mesafe = sonar.ping_cm();                     //Gecikme gönderip mesafeyi cm olarak alıcaz.
 Serial.print("MESAFE");                   
 Serial.println(mesafe);                         // mesafe değerini ekrana yazdır.
 
